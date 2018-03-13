@@ -190,7 +190,7 @@ class CustomTrialViewController: UIViewController {
             alert.showErrorAlert(fromController: self, error: error.localizedDescription)
         }
         
-        TrialHandler.shared.saveTrials(key: "Trials")
+        TrialHandler.shared.saveTrials()
     
         print("saved")
         

@@ -16,7 +16,7 @@ class TrialViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
     
-        TrialHandler.shared.getTrials(key: "Trials", completion: { trial in
+        TrialHandler.shared.getTrials(completion: { trial in
             print(trial)
         })
         

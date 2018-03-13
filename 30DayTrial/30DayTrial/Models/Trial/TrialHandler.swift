@@ -15,8 +15,8 @@ class TrialHandler {
     var trialsArray = [TrialPeriod]()
     var array = [[String:Any]]()
     
-    func getTrials(key: String, completion: @escaping ([TrialPeriod])-> ())  {
-        if let json = UserDefaults.standard.object(forKey: key) as? [[String : Any]] {
+    func getTrials(completion: @escaping ([TrialPeriod])-> ())  {
+        if let json = UserDefaults.standard.object(forKey: "Trials") as? [[String : Any]] {
             for trials in json {
                 guard let jsonData = try? JSONSerialization.data(withJSONObject: trials) else { return }
                 let decodedData = try? JSONDecoder().decode(TrialPeriod.self, from: jsonData)
@@ -41,19 +41,19 @@ class TrialHandler {
         }
     }
     
-    func deleteTrial(trialName: String, key: String) {
+    func deleteTrial(trialName: String) {
         let newTrialArray = self.trialsArray.filter {$0.trialName != trialName }
         self.trialsArray = newTrialArray
-        self.saveTrials(key: key)
+        self.saveTrials()
     }
     
-    func saveTrials(key: String) {
+    func saveTrials() {
         for trials in trialsArray {
             if let dictionaryTrial = trials.dictionary {
                 self.array.append(dictionaryTrial)
             }
         }
-        UserDefaults.standard.set(array, forKey: key)
+        UserDefaults.standard.set(array, forKey: "Trials")
     }
 
 }
