@@ -153,11 +153,11 @@ class CustomTrialViewController: UIViewController {
             try validateIsText.validate()
             try validateIsNumber.validate()
         } catch ValidatorError.StringWasEmpty(let description) {
-            alert.showErrorAlert(fromController: self, error: description)
+            print(description)
             return
         }
         catch let error {
-            alert.showErrorAlert(fromController: self, error: error.localizedDescription)
+            print(error)
             return
         }
         
