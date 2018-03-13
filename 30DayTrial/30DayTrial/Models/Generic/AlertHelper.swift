@@ -17,4 +17,25 @@ class AlertHelper {
         controller.present(alert, animated: true, completion: nil)
     }
     
+    func showSuccessSave(fromController controller: UIViewController) {
+        let alert = UIAlertController(title: "Success", message: "Trial has been saved", preferredStyle: UIAlertControllerStyle.alert)
+        let goToList = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            controller.performSegue(withIdentifier: "Back", sender: controller)
+        }
+        )
+        alert.addAction(goToList)
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
+    
+   
+    
 }
+
+extension UIViewController {
+    func goToView(nextView: UIViewController) {
+        
+    }
+}
+
+

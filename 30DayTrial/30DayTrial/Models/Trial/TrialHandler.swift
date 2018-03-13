@@ -21,7 +21,7 @@ class TrialHandler {
                 guard let jsonData = try? JSONSerialization.data(withJSONObject: trials) else { return }
                 let decodedData = try? JSONDecoder().decode(TrialPeriod.self, from: jsonData)
                 if let decodedTrial = decodedData {
-                    if self.trialsArray.contains(where: { $0.uuid == decodedTrial.uuid}){
+                    if self.trialsArray.contains(where: { $0.trialID == decodedTrial.trialID}){
                         return
                     } else {
                         self.trialsArray.append(decodedTrial)
@@ -41,8 +41,8 @@ class TrialHandler {
         }
     }
     
-    func deleteTrial(trialName: String) {
-        let newTrialArray = self.trialsArray.filter {$0.trialName != trialName }
+    func deleteTrial(trialID: UUID) {
+        let newTrialArray = self.trialsArray.filter {$0.trialID != trialID }
         self.trialsArray = newTrialArray
         self.saveTrials()
     }

@@ -9,14 +9,14 @@
 import Foundation
 
 struct TrialPeriod: Codable {
-    var uuid: UUID
+    var trialID: UUID
     var trialName: String
     var startDate: Date
     var endDate: Int
     var cancellationTime: Date
     
     init(trialName: String, startDate: Date, endDate: Int, cancellationTime: Date) {
-        self.uuid = UUID()
+        self.trialID = UUID()
         self.trialName = trialName
         self.startDate = startDate
         self.endDate = endDate
