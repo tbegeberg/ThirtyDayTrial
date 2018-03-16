@@ -28,6 +28,7 @@
 		93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD7204E9C7200E0DB0D /* ValidatorError.swift */; };
 		93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD9204E9CCE00E0DB0D /* StringValidator.swift */; };
 		93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DDB204E9D7C00E0DB0D /* StringHolder.swift */; };
+		93C70219205BF56A00F75A99 /* StandardTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */; };
 		93E4EC65203D7E0D00B28F24 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		93676DD7204E9C7200E0DB0D /* ValidatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorError.swift; sourceTree = "<group>"; };
 		93676DD9204E9CCE00E0DB0D /* StringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidator.swift; sourceTree = "<group>"; };
 		93676DDB204E9D7C00E0DB0D /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
+		93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTrialViewController.swift; sourceTree = "<group>"; };
 		93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				934C4C342033313100E85BBB /* TrialViewController.swift */,
+				93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */,
 				9352F6E32048304A003A75C0 /* CustomTrialViewController.swift */,
 			);
 			path = Controllers;
@@ -294,6 +297,7 @@
 				9352F6E8204842D6003A75C0 /* CustomUITextViews.swift in Sources */,
 				93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */,
 				93676DD2204E9B7700E0DB0D /* NotValidatedFeedback.swift in Sources */,
+				93C70219205BF56A00F75A99 /* StandardTrialViewController.swift in Sources */,
 				9352F6E42048304A003A75C0 /* CustomTrialViewController.swift in Sources */,
 				934C4C4C20335A1800E85BBB /* TrialHandler.swift in Sources */,
 				9352F6E220482A59003A75C0 /* TrialTableViewDatasource.swift in Sources */,

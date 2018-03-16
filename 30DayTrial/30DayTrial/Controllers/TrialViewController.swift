@@ -10,6 +10,10 @@ import UIKit
 
 class TrialViewController: UIViewController {
 
+    
+    //Create alarm
+    //Create visual of expiration
+    
     @IBOutlet weak var trialTable: UITableView!
     var dataSource: TrialTableViewDatasource?
     

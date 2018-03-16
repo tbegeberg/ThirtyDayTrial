@@ -34,13 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4O-w6-qrV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Trials" id="dhR-4u-JGW"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Cf-fW-4ZG">
                                 <rect key="frame" x="0.0" y="114" width="375" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,7 +57,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="xEj-yd-PHm"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tlT-ME-ZKJ">
                             <connections>
-                                <segue destination="Rc3-jv-7cF" kind="show" id="8xj-bi-DuH"/>
+                                <segue destination="YC2-Cw-Ueg" kind="show" id="YoC-o1-JYI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,10 +69,32 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="-8.5457271364317844"/>
         </scene>
-        <!--Custom Trial-->
+        <!--Standard Trials-->
+        <scene sceneID="N0y-g1-zxj">
+            <objects>
+                <viewController title="Standard Trials" id="YC2-Cw-Ueg" customClass="StandardTrialViewController" customModule="ThirtyDayTrial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BOJ-hi-vP7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0ag-ST-LOa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Trials" id="Dxp-nb-ifE">
+                        <barButtonItem key="rightBarButtonItem" title="Custom" id="iev-tx-k7A">
+                            <connections>
+                                <segue destination="Rc3-jv-7cF" kind="show" id="42l-Rj-sYz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XQ-bT-FtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="-9"/>
+        </scene>
+        <!--Custom Trials-->
         <scene sceneID="Mde-Me-d0B">
             <objects>
-                <viewController title="Custom Trial" id="Rc3-jv-7cF" customClass="CustomTrialViewController" customModule="ThirtyDayTrial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Custom Trials" id="Rc3-jv-7cF" customClass="CustomTrialViewController" customModule="ThirtyDayTrial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzL-Tb-099">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,10 +107,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjf-Yp-Fhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="-14.842578710644679"/>
+            <point key="canvasLocation" x="2297" y="-9"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="n75-cG-2E7"/>
+        <segue reference="25R-wF-2KK"/>
     </inferredMetricsTieBreakers>
 </document>

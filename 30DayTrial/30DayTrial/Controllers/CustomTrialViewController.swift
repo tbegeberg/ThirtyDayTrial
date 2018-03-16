@@ -106,8 +106,8 @@ class CustomTrialViewController: UIViewController {
         self.view.addSubview(toolBar)
         toolBar.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.view)
-            make.left.equalTo(self.view).offset(10)
-            make.right.equalTo(self.view).offset(-10)
+            make.left.equalTo(self.view)
+            make.right.equalTo(self.view)
         }
         self.toolBar.isHidden = false
         
