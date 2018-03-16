@@ -30,4 +30,21 @@ class TrialTableViewDatasource: NSObject, UITableViewDataSource {
         cell.textLabel?.text = "\(trials.trialName) - Cancel by: \(dateFormatter.string(from: trials.cancellationTime))"
         return cell
     }
+    
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+   
+            TrialHandler.shared.deleteTrial(trialID: self.trials[indexPath.row].trialID)
+            trials.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+    }
+    
+
 }

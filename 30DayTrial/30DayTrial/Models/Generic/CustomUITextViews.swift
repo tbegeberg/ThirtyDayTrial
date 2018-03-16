@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomUITextField: UITextField {
+class CustomUITextField: UITextField, UITextFieldDelegate {
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -19,10 +19,15 @@ class CustomUITextField: UITextField {
         self.font = UIFont(name: (self.font?.fontName)!, size: 20)
         self.textAlignment = .center
         self.sizeToFit()
+        self.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.layer.borderColor = UIColor.green.cgColor
     }
 }
 

@@ -93,7 +93,6 @@ class CustomTrialViewController: UIViewController {
             make.bottom.equalTo(self.view).offset(-60)
             make.left.equalTo(self.view).offset(10)
             make.right.equalTo(self.view).offset(-10)
-            //make.size.height.equalTo(self.view.frame.height / 5)
         }
         trialDate.isHidden = false
         
@@ -190,11 +189,8 @@ class CustomTrialViewController: UIViewController {
             alert.showErrorAlert(fromController: self, error: error.localizedDescription)
         }
         
-        //TrialHandler.shared.saveTrials()
-    
-        print("saved")
+        TrialHandler.shared.saveTrials()
         alert.showSuccessSave(fromController: self)
-        
     }
 
  

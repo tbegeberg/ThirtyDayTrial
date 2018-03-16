@@ -48,6 +48,7 @@ class TrialHandler {
     }
     
     func saveTrials() {
+        self.array.removeAll()
         for trials in trialsArray {
             if let dictionaryTrial = trials.dictionary {
                 self.array.append(dictionaryTrial)

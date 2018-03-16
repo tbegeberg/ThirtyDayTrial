@@ -29,7 +29,6 @@
 		93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD9204E9CCE00E0DB0D /* StringValidator.swift */; };
 		93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DDB204E9D7C00E0DB0D /* StringHolder.swift */; };
 		93E4EC65203D7E0D00B28F24 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */; };
-		93EC6A102052B220007A1C1B /* ValidatedFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC6A0F2052B220007A1C1B /* ValidatedFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		93676DD9204E9CCE00E0DB0D /* StringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidator.swift; sourceTree = "<group>"; };
 		93676DDB204E9D7C00E0DB0D /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
 		93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		93EC6A0F2052B220007A1C1B /* ValidatedFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				93676DD1204E9B7700E0DB0D /* NotValidatedFeedback.swift */,
-				93EC6A0F2052B220007A1C1B /* ValidatedFeedback.swift */,
 				93676DD3204E9BCA00E0DB0D /* Validatable.swift */,
 				93676DD5204E9C0200E0DB0D /* ValidatorRules.swift */,
 				93676DD7204E9C7200E0DB0D /* ValidatorError.swift */,
@@ -290,7 +287,6 @@
 			files = (
 				9352F6E6204842C1003A75C0 /* CustomUIControls.swift in Sources */,
 				934C4C352033313100E85BBB /* TrialViewController.swift in Sources */,
-				93EC6A102052B220007A1C1B /* ValidatedFeedback.swift in Sources */,
 				93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */,
 				93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */,
 				9352F6EA20484339003A75C0 /* CustomUIBars.swift in Sources */,

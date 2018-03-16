@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-class CustomUIBars {
-    
-
-}
-
-
 class CustomToolBar: UIToolbar {
     
     init() {

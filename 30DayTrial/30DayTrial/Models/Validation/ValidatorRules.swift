@@ -22,8 +22,6 @@ class IsNotEmptyRule:ValidatorRule {
             }
             
             throw ValidatorError.StringWasEmpty("Empty field")
-        } else {
-            validatable.textFieldValue.validaded()
         }
     }
 }
@@ -37,9 +35,6 @@ class IsNotANumber:ValidatorRule {
                 feedbacker.showFeedback(problem: "Please enter a number")
             }
             throw ValidatorError.StringWasEmpty("Please enter a number in \(validatable.textFieldName)")
-        }
-        else {
-            validatable.textFieldValue.validaded()
         }
     }
 }
