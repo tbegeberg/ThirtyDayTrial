@@ -12,10 +12,10 @@ import SnapKit
 class CustomTrialViewController: UIViewController {
 
     let alert = AlertHelper()
-    let trialNameTextfield = CustomUITextField()
-    let trialStartDateTextField = CustomUITextField()
-    let trialCancelDateTextField = CustomUITextField()
-    let trialDaysTextField = CustomUITextField()
+    let trialNameTextfield = CustomUITextField(userCanEdit: true)
+    let trialStartDateTextField = CustomUITextField(userCanEdit: false)
+    let trialCancelDateTextField = CustomUITextField(userCanEdit: false)
+    let trialDaysTextField = CustomUITextField(userCanEdit: true)
     
     var trialStartDate: Date?
     var trialCancelDate: Date?
@@ -44,6 +44,7 @@ class CustomTrialViewController: UIViewController {
         
         self.view.addSubview(trialStartDateTextField)
         trialStartDateTextField.placeholder = "Start Date"
+        
         trialStartDateTextField.snp.makeConstraints { (make) in
             make.top.equalTo(trialNameTextfield).offset(40)
             make.left.equalTo(self.view).offset(20)

@@ -11,15 +11,20 @@ import UIKit
 
 class CustomUITextField: UITextField, UITextFieldDelegate {
 
-    init() {
+    var userCanEdit: Bool?
+    
+    init(userCanEdit: Bool) {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        self.userCanEdit = userCanEdit
         self.layer.cornerRadius = 8.0
         self.layer.borderColor = UIColor.gray.cgColor
         self.layer.borderWidth = 1
         self.font = UIFont(name: (self.font?.fontName)!, size: 20)
         self.textAlignment = .center
         self.sizeToFit()
+        self.allowsEditingTextAttributes = userCanEdit
         self.delegate = self
+     
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,6 +34,23 @@ class CustomUITextField: UITextField, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.layer.borderColor = UIColor.green.cgColor
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.userCanEdit == false {
+            dismissKeyboard()
+        }
+    }
+    
+    func dismissKeyboard() {
+        self.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.endEditing(true)
+        return true
+    }
+
+ 
 }
 
 class CustomUILabel: UILabel {
