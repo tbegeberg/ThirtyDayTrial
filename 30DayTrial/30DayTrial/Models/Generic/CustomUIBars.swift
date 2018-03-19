@@ -15,7 +15,6 @@ class CustomSearchBar: UISearchBar {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         self.barStyle = .default
         self.barTintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
-       
         self.sizeToFit()
     }
     

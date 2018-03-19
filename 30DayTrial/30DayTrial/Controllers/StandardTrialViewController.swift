@@ -8,32 +8,53 @@
 
 import UIKit
 
-class StandardTrialViewController: UIViewController {
-
+class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+   
     //Add standard by search
     //Add listview for search
     //Array with all standard trisl
     
-    var standardTrails: [TrialPeriod] = [TrialPeriod(trialName: "Netflix", startDate: Date(), endDate: 30, cancellationTime: Date.distantFuture), TrialPeriod(trialName: "Amazon", startDate: Date(), endDate: 20, cancellationTime: Date.distantFuture)]
-    let trialSearchBar = CustomSearchBar()
+    @IBOutlet weak var tableView: UITableView!
+    var dataSource: TrialTableViewDatasource?
+    private var standardTrials: [TrialPeriod] = [TrialPeriod(trialName: "Netflix", startDate: Date(), endDate: 30, cancellationTime: Date.distantFuture), TrialPeriod(trialName: "Amazon", startDate: Date(), endDate: 20, cancellationTime: Date.distantFuture)]
+    private var filteredTrialsList = [TrialPeriod]()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.addSubview(trialSearchBar)
-        trialSearchBar.placeholder = "Enter a Trial Name"
-        trialSearchBar.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view).offset(80)
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.height.equalTo(self.view.frame.height/5)
-        }
-        
+        configureSearchController()
+        updateDataSouce(trials: standardTrials)
         
     }
-
-
-
+    
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.placeholder = "Enter trial"
+        searchController.searchBar.delegate = self
+        
+    }
+    
+    func filterSearch(serchBar: UISearchBar) {
+       let searchText = serchBar.text ?? ""
+        filteredTrialsList = standardTrials.filter({ (Trials) in
+            let isMatchingSearchText = Trials.trialName.lowercased().contains(searchText.lowercased()) || searchText.isEmpty
+            return isMatchingSearchText
+        })
+        updateDataSouce(trials: filteredTrialsList)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+       filterSearch(serchBar: searchController.searchBar)
+    }
+    
+    func updateDataSouce(trials: [TrialPeriod]) {
+        self.dataSource = TrialTableViewDatasource(trials: trials)
+        self.tableView.dataSource = dataSource
+        self.tableView.reloadData()
+    }
 
 
 }
