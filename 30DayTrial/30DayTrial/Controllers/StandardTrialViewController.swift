@@ -16,7 +16,7 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
     
     @IBOutlet weak var tableView: UITableView!
     var dataSource: TrialTableViewDatasource?
-    private var standardTrials: [TrialPeriod] = [TrialPeriod(trialName: "Netflix", startDate: Date(), endDate: 30, cancellationTime: Date.distantFuture), TrialPeriod(trialName: "Amazon", startDate: Date(), endDate: 20, cancellationTime: Date.distantFuture)]
+    private var standardTrials: [TrialPeriod] = DataStandardTrials.createList()
     private var filteredTrialsList = [TrialPeriod]()
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -24,7 +24,6 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
         super.viewDidLoad()
         configureSearchController()
         updateDataSouce(trials: standardTrials)
-        
     }
     
     func configureSearchController() {
