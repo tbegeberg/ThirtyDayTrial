@@ -55,8 +55,15 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let trial = self.standardTrials[indexPath.row]
-        TrialHandler.shared.trialsArray.append(trial)
-        TrialHandler.shared.saveTrials()
+        do {
+            try TrialHandler.shared.setTrial(trialPeriod: trial)
+        }
+        catch Error.TrialExcist(let description) {
+            alert.showErrorAlert(fromController: self, error: description)
+        } catch let error {
+            alert.showErrorAlert(fromController: self, error: error.localizedDescription)
+        }
+        
         alert.showSuccessSave(fromController: self)
     }
     

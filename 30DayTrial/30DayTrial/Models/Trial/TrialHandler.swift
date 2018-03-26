@@ -32,12 +32,13 @@ class TrialHandler {
         }
     }
     
-    func setTrial(trialName: String, startdate: Date, endDate: Int, cancellationTime: Date) throws{
-        let trial = TrialPeriod(trialName: trialName, startDate: startdate, endDate: endDate, cancellationTime: cancellationTime)
+    func setTrial(trialPeriod: TrialPeriod) throws{
+        let trial = trialPeriod
         if self.trialsArray.contains(where: { $0.trialName == trial.trialName}) {
             throw Error.TrialExcist("Trial \(trial.trialName) already exists")
         } else {
             self.trialsArray.append(trial)
+            self.saveTrials()
         }
     }
     

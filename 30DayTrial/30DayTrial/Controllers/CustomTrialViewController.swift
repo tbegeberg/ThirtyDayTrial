@@ -133,10 +133,10 @@ class CustomTrialViewController: UIViewController {
     
     @objc func saveAction(sender:UIButton!) {
     
-        let nameHolder = StringHolder(textFieldID: "trial Name", textField: trialNameTextfield)
-        let cancelDayHolder = StringHolder(textFieldID: "cancel Date", textField: trialCancelDateTextField)
-        let startDateHolder = StringHolder(textFieldID: "start Date", textField: trialStartDateTextField)
-        let trialDaysHolder = StringHolder(textFieldID: "trial Days", textField: trialDaysTextField)
+        let nameHolder = StringHolder(textFieldID: "trial name", textField: trialNameTextfield)
+        let cancelDayHolder = StringHolder(textFieldID: "cancel date", textField: trialCancelDateTextField)
+        let startDateHolder = StringHolder(textFieldID: "start date", textField: trialStartDateTextField)
+        let trialDaysHolder = StringHolder(textFieldID: "trial days", textField: trialDaysTextField)
         
         let validateIsText = StringValidator(rules: [IsNotEmptyRule()], subjects: [nameHolder, startDateHolder, cancelDayHolder, trialDaysHolder])
         let validateIsNumber = StringValidator(rules: [IsNotANumber()], subjects: [trialDaysHolder])
@@ -174,15 +174,14 @@ class CustomTrialViewController: UIViewController {
         }
         
         do {
-            try TrialHandler.shared.setTrial(trialName: trialNameTextfield.textVerifier, startdate: customStartDate, endDate: customTrialDays, cancellationTime: customCancelDate)
+            try TrialHandler.shared.setTrial(trialPeriod: TrialPeriod(trialName: trialNameTextfield.textVerifier, startDate: customStartDate, endDate: customTrialDays, cancellationTime: customCancelDate))
         }
         catch Error.TrialExcist(let description) {
             alert.showErrorAlert(fromController: self, error: description)
         } catch let error {
             alert.showErrorAlert(fromController: self, error: error.localizedDescription)
         }
-        
-        TrialHandler.shared.saveTrials()
+    
         alert.showSuccessSave(fromController: self)
     }
 
