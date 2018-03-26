@@ -105,6 +105,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mqT-2N-bcK" id="2xJ-yK-W5I"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Back" id="XeR-zb-8Pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XQ-bT-FtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,6 +132,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="25R-wF-2KK"/>
+        <segue reference="XeR-zb-8Pf"/>
     </inferredMetricsTieBreakers>
 </document>

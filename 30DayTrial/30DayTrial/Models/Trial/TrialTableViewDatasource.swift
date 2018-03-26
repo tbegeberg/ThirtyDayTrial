@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TrialTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class TrialTableViewDatasource: NSObject, UITableViewDataSource {
     
     var trials: [TrialPeriod]
     var editEnabled: Bool?

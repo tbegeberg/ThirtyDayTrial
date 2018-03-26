@@ -18,7 +18,8 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
     var dataSource: TrialTableViewDatasource?
     private var standardTrials: [TrialPeriod] = DataStandardTrials.createList()
     private var filteredTrialsList = [TrialPeriod]()
-    private let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
+    let alert = AlertHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,8 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let trial = self.standardTrials[indexPath.row]
         TrialHandler.shared.trialsArray.append(trial)
+        TrialHandler.shared.saveTrials()
+        alert.showSuccessSave(fromController: self)
     }
     
     
