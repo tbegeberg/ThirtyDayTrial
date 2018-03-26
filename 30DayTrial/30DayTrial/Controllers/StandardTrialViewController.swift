@@ -9,10 +9,6 @@
 import UIKit
 
 class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate {
-   
-    //Add standard by search
-    //Add listview for search
-    //Array with all standard trisl
     
     @IBOutlet weak var tableView: UITableView!
     var dataSource: TrialTableViewDatasource?

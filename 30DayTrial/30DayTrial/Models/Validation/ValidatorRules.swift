@@ -18,7 +18,7 @@ class IsNotEmptyRule:ValidatorRule {
         if validatable.textFieldValue.text == "" {
             
             if let feedbacker = validatable.textFieldValue as? NotValidatedFeedback {
-                feedbacker.showFeedback(problem: "Please enter a \(validatable.textFieldName)")
+                feedbacker.showFeedback(problem: "Please enter \(validatable.textFieldName)")
             }
             
             throw ValidatorError.StringWasEmpty("Empty field")

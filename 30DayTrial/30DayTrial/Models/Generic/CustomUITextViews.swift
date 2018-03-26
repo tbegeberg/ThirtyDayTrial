@@ -32,7 +32,7 @@ class CustomUITextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.layer.borderColor = UIColor.green.cgColor
+        self.layer.borderColor = UIColor.gray.cgColor
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

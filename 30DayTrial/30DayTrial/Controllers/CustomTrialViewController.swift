@@ -133,10 +133,10 @@ class CustomTrialViewController: UIViewController {
     
     @objc func saveAction(sender:UIButton!) {
     
-        let nameHolder = StringHolder(textFieldID: "Trial Name", textField: trialNameTextfield)
-        let cancelDayHolder = StringHolder(textFieldID: "Cancel Date", textField: trialCancelDateTextField)
-        let startDateHolder = StringHolder(textFieldID: "Start Date", textField: trialStartDateTextField)
-        let trialDaysHolder = StringHolder(textFieldID: "Trial Days", textField: trialDaysTextField)
+        let nameHolder = StringHolder(textFieldID: "trial Name", textField: trialNameTextfield)
+        let cancelDayHolder = StringHolder(textFieldID: "cancel Date", textField: trialCancelDateTextField)
+        let startDateHolder = StringHolder(textFieldID: "start Date", textField: trialStartDateTextField)
+        let trialDaysHolder = StringHolder(textFieldID: "trial Days", textField: trialDaysTextField)
         
         let validateIsText = StringValidator(rules: [IsNotEmptyRule()], subjects: [nameHolder, startDateHolder, cancelDayHolder, trialDaysHolder])
         let validateIsNumber = StringValidator(rules: [IsNotANumber()], subjects: [trialDaysHolder])

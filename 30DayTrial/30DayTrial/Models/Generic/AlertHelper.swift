@@ -32,10 +32,6 @@ class AlertHelper {
     
 }
 
-extension UIViewController {
-    func goToView(nextView: UIViewController) {
-        
-    }
-}
+
 
 
