@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class TrialTableViewDatasource: NSObject, UITableViewDataSource {
+class TrialTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var trials: [TrialPeriod]
+    var editEnabled: Bool?
     
-    init(trials: [TrialPeriod]) {
+    init(trials: [TrialPeriod], editEnabled: Bool) {
         self.trials = trials
+        self.editEnabled = editEnabled
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,18 +35,19 @@ class TrialTableViewDatasource: NSObject, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if editEnabled == true {
+            return true
+        } else {
+            return false
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-   
             TrialHandler.shared.deleteTrial(trialID: self.trials[indexPath.row].trialID)
             trials.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
         }
     }
-    
 
 }

@@ -24,7 +24,7 @@ class TrialViewController: UIViewController {
             print(trial)
         })
         
-        self.dataSource = TrialTableViewDatasource(trials: TrialHandler.shared.trialsArray)
+        self.dataSource = TrialTableViewDatasource(trials: TrialHandler.shared.trialsArray, editEnabled: true)
         self.trialTable.dataSource = dataSource
         self.trialTable.reloadData()
 

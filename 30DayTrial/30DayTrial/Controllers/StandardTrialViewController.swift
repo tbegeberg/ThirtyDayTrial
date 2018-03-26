@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate {
    
     //Add standard by search
     //Add listview for search
@@ -24,6 +24,7 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
         super.viewDidLoad()
         configureSearchController()
         updateDataSouce(trials: standardTrials)
+        self.tableView.delegate = self
     }
     
     func configureSearchController() {
@@ -50,10 +51,17 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
     }
     
     func updateDataSouce(trials: [TrialPeriod]) {
-        self.dataSource = TrialTableViewDatasource(trials: trials)
+        self.dataSource = TrialTableViewDatasource(trials: trials, editEnabled: false)
         self.tableView.dataSource = dataSource
         self.tableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let trial = self.standardTrials[indexPath.row]
+        TrialHandler.shared.trialsArray.append(trial)
+    }
+    
+    
 
 
 }
