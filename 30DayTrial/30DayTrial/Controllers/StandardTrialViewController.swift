@@ -65,7 +65,5 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
         alert.showSuccessSave(fromController: self)
     }
     
-    
-
 
 }

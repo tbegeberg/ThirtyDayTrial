@@ -20,10 +20,7 @@ class TrialListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         
-        TrialHandler.shared.getTrials(completion: { trial in
-            print(trial)
-        })
-        
+        TrialHandler.shared.getTrials()
         self.dataSource = TrialTableViewDatasource(trials: TrialHandler.shared.trialsArray, editEnabled: true)
         self.trialTable.dataSource = dataSource
         self.trialTable.reloadData()
