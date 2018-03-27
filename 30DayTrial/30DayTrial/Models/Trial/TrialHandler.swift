@@ -58,8 +58,6 @@ class TrialHandler {
         UserDefaults.standard.set(array, forKey: "Trials")
     }
     
-    func timeToCancelTrial() {
-        
-    }
+   
 
 }

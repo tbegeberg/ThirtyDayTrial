@@ -62,7 +62,6 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
         } catch let error {
             alert.showErrorAlert(fromController: self, error: error.localizedDescription)
         }
-        
         alert.showSuccessSave(fromController: self)
     }
     

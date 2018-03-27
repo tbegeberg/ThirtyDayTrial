@@ -10,6 +10,7 @@
 		93092970203AEFAE00C87E46 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309296F203AEFAE00C87E46 /* Error.swift */; };
 		9323E638204D7DD10032C60B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9323E635204D7DC70032C60B /* SnapKit.framework */; };
 		933B70D0206A91A300EA4217 /* DateFormatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B70CF206A91A300EA4217 /* DateFormatable.swift */; };
+		933B70D2206A977500EA4217 /* TrialDateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B70D1206A977500EA4217 /* TrialDateHandler.swift */; };
 		934C4C332033313100E85BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C322033313100E85BBB /* AppDelegate.swift */; };
 		934C4C352033313100E85BBB /* TrialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C342033313100E85BBB /* TrialListViewController.swift */; };
 		934C4C382033313100E85BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934C4C362033313100E85BBB /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		9309296F203AEFAE00C87E46 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		9323E62F204D7DC70032C60B /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		933B70CF206A91A300EA4217 /* DateFormatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatable.swift; sourceTree = "<group>"; };
+		933B70D1206A977500EA4217 /* TrialDateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialDateHandler.swift; sourceTree = "<group>"; };
 		934C4C2F2033313100E85BBB /* ThirtyDayTrial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirtyDayTrial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934C4C322033313100E85BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		934C4C342033313100E85BBB /* TrialListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialListViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				934C4C4B20335A1800E85BBB /* TrialHandler.swift */,
+				933B70D1206A977500EA4217 /* TrialDateHandler.swift */,
 				934C4C49203331A900E85BBB /* TrialPeriod.swift */,
 				9352F6E120482A59003A75C0 /* TrialTableViewDatasource.swift */,
 				939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */,
@@ -301,6 +304,7 @@
 				93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */,
 				9352F6EA20484339003A75C0 /* CustomUIBars.swift in Sources */,
 				934C4C332033313100E85BBB /* AppDelegate.swift in Sources */,
+				933B70D2206A977500EA4217 /* TrialDateHandler.swift in Sources */,
 				9352F6E8204842D6003A75C0 /* CustomUITextViews.swift in Sources */,
 				93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */,
 				93676DD2204E9B7700E0DB0D /* NotValidatedFeedback.swift in Sources */,
