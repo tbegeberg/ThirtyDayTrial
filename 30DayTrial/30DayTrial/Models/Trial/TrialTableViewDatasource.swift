@@ -26,9 +26,7 @@ class TrialTableViewDatasource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let trials = self.trials[indexPath.row]
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = DateFormatter.Style.none
-        dateFormatter.dateStyle = DateFormatter.Style.medium
+        let dateFormatter = DateFormatable()
         cell.textLabel?.text = "\(trials.trialName) - Cancel by: \(dateFormatter.string(from: trials.cancellationTime))"
         return cell
     }

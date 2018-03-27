@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TrialViewController: UIViewController {
+
+class TrialListViewController: UIViewController {
 
     
     //Create alarm
@@ -16,6 +17,8 @@ class TrialViewController: UIViewController {
     
     @IBOutlet weak var trialTable: UITableView!
     var dataSource: TrialTableViewDatasource?
+    let alert = AlertHelper()
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
@@ -27,8 +30,10 @@ class TrialViewController: UIViewController {
         self.dataSource = TrialTableViewDatasource(trials: TrialHandler.shared.trialsArray, editEnabled: true)
         self.trialTable.dataSource = dataSource
         self.trialTable.reloadData()
-
+        alert.timeToCancel(fromController: self)
     }
+    
+    
     
     
 

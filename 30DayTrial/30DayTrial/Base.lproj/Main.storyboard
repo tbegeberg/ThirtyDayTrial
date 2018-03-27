@@ -29,7 +29,7 @@
         <!--Trials-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TrialViewController" customModule="ThirtyDayTrial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TrialListViewController" customModule="ThirtyDayTrial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +132,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YoC-o1-JYI"/>
         <segue reference="XeR-zb-8Pf"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,8 +23,6 @@ class DataStandardTrials: NSObject {
         }
         
         return [TrialPeriod(trialName: "HBO", startDate: currentDate, endDate: range.count, cancellationTime: plusOneMonth), TrialPeriod(trialName: "NetFlix", startDate: currentDate, endDate: range.count, cancellationTime: plusOneMonth)]
-        
-       
     }
     
 }

@@ -111,9 +111,7 @@ class CustomTrialViewController: UIViewController {
     }
     
     @objc func doneClick() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        let dateFormatter = DateFormatable()
         if activeTextfield == "startDate" {
             self.trialStartDateTextField.text = dateFormatter.string(from: trialDate.date)
             self.trialStartDate = trialDate.date

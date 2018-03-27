@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		93092970203AEFAE00C87E46 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309296F203AEFAE00C87E46 /* Error.swift */; };
 		9323E638204D7DD10032C60B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9323E635204D7DC70032C60B /* SnapKit.framework */; };
+		933B70D0206A91A300EA4217 /* DateFormatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B70CF206A91A300EA4217 /* DateFormatable.swift */; };
 		934C4C332033313100E85BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C322033313100E85BBB /* AppDelegate.swift */; };
-		934C4C352033313100E85BBB /* TrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C342033313100E85BBB /* TrialViewController.swift */; };
+		934C4C352033313100E85BBB /* TrialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C342033313100E85BBB /* TrialListViewController.swift */; };
 		934C4C382033313100E85BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934C4C362033313100E85BBB /* Main.storyboard */; };
 		934C4C3B2033313100E85BBB /* _0DayTrial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 934C4C392033313100E85BBB /* _0DayTrial.xcdatamodeld */; };
 		934C4C3D2033313100E85BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934C4C3C2033313100E85BBB /* Assets.xcassets */; };
@@ -53,9 +54,10 @@
 /* Begin PBXFileReference section */
 		9309296F203AEFAE00C87E46 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		9323E62F204D7DC70032C60B /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
+		933B70CF206A91A300EA4217 /* DateFormatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatable.swift; sourceTree = "<group>"; };
 		934C4C2F2033313100E85BBB /* ThirtyDayTrial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirtyDayTrial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934C4C322033313100E85BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		934C4C342033313100E85BBB /* TrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialViewController.swift; sourceTree = "<group>"; };
+		934C4C342033313100E85BBB /* TrialListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialListViewController.swift; sourceTree = "<group>"; };
 		934C4C372033313100E85BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		934C4C3A2033313100E85BBB /* _0DayTrial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0DayTrial.xcdatamodel; sourceTree = "<group>"; };
 		934C4C3C2033313100E85BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 		934C4C482033317100E85BBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				934C4C342033313100E85BBB /* TrialViewController.swift */,
+				934C4C342033313100E85BBB /* TrialListViewController.swift */,
 				93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */,
 				9352F6E32048304A003A75C0 /* CustomTrialViewController.swift */,
 			);
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */,
+				933B70CF206A91A300EA4217 /* DateFormatable.swift */,
 				9309296F203AEFAE00C87E46 /* Error.swift */,
 				9352F6E7204842D6003A75C0 /* CustomUITextViews.swift */,
 				9352F6E5204842C1003A75C0 /* CustomUIControls.swift */,
@@ -292,8 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9352F6E6204842C1003A75C0 /* CustomUIControls.swift in Sources */,
-				934C4C352033313100E85BBB /* TrialViewController.swift in Sources */,
+				934C4C352033313100E85BBB /* TrialListViewController.swift in Sources */,
 				93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */,
+				933B70D0206A91A300EA4217 /* DateFormatable.swift in Sources */,
 				93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */,
 				9352F6EA20484339003A75C0 /* CustomUIBars.swift in Sources */,
 				934C4C332033313100E85BBB /* AppDelegate.swift in Sources */,

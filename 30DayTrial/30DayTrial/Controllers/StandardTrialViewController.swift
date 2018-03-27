@@ -31,7 +31,6 @@ class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UI
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.placeholder = "Enter trial"
         searchController.searchBar.delegate = self
-        
     }
     
     func filterSearch(serchBar: UISearchBar) {
