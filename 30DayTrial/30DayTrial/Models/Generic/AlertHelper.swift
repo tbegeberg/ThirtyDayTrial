@@ -28,16 +28,6 @@ class AlertHelper {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    func timeToCancel(fromController controller: UIViewController, trialName: String) {
-        AudioServicesPlayAlertSound(SystemSoundID(1322))
-        let alert = UIAlertController(title: "Alert", message: "Time To Cancel Trial: \(trialName)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        controller.present(alert, animated: true, completion: nil)
-        
-    }
-    
-   
-    
 }
 
 

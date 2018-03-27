@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 class TrialListViewController: UIViewController {
 
@@ -15,7 +15,7 @@ class TrialListViewController: UIViewController {
     
     @IBOutlet weak var trialTable: UITableView!
     var dataSource: TrialTableViewDatasource?
-    let alert = AlertHelper()
+    private var trialsCancelArray = [String]()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
@@ -32,11 +32,24 @@ class TrialListViewController: UIViewController {
             let cancelTime = trial.cancellationTime
             let trialDateHandler = TrialDateHandler()
             if trialDateHandler.timeToCancelTrial(cancelDate: cancelTime) == true {
-                alert.timeToCancel(fromController: self, trialName: trial.trialName)
+                trialsCancelArray.append(trial.trialName)
             }
         }
+        showCancelAlerts()
     }
 
+    func showCancelAlerts() {
+        if let trialToCancel = trialsCancelArray.first {
+            AudioServicesPlayAlertSound(SystemSoundID(1322))
+            let alert = UIAlertController(title: "Alert", message: "Time To Cancel Trial: \(trialToCancel)", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .default) { action in
+                self.trialsCancelArray.remove(at: 0) // remove the message of the alert we have just dismissed
+                self.showCancelAlerts()
+            }
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
 
 }
 
