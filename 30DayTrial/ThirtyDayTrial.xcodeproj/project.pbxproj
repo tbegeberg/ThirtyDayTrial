@@ -30,6 +30,7 @@
 		93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD7204E9C7200E0DB0D /* ValidatorError.swift */; };
 		93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD9204E9CCE00E0DB0D /* StringValidator.swift */; };
 		93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DDB204E9D7C00E0DB0D /* StringHolder.swift */; };
+		9395E619206B878F00E3574C /* LocalNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395E618206B878F00E3574C /* LocalNotifier.swift */; };
 		939C71AB20610E4C00E068D2 /* DataStandardTrials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */; };
 		93C70219205BF56A00F75A99 /* StandardTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */; };
 		93E4EC65203D7E0D00B28F24 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */; };
@@ -78,6 +79,7 @@
 		93676DD7204E9C7200E0DB0D /* ValidatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorError.swift; sourceTree = "<group>"; };
 		93676DD9204E9CCE00E0DB0D /* StringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidator.swift; sourceTree = "<group>"; };
 		93676DDB204E9D7C00E0DB0D /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
+		9395E618206B878F00E3574C /* LocalNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifier.swift; sourceTree = "<group>"; };
 		939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStandardTrials.swift; sourceTree = "<group>"; };
 		93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTrialViewController.swift; sourceTree = "<group>"; };
 		93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				93E4EC64203D7E0D00B28F24 /* AlertHelper.swift */,
+				9395E618206B878F00E3574C /* LocalNotifier.swift */,
 				933B70CF206A91A300EA4217 /* DateFormatable.swift */,
 				9309296F203AEFAE00C87E46 /* Error.swift */,
 				9352F6E7204842D6003A75C0 /* CustomUITextViews.swift */,
@@ -318,6 +321,7 @@
 				934C4C3B2033313100E85BBB /* _0DayTrial.xcdatamodeld in Sources */,
 				939C71AB20610E4C00E068D2 /* DataStandardTrials.swift in Sources */,
 				93092970203AEFAE00C87E46 /* Error.swift in Sources */,
+				9395E619206B878F00E3574C /* LocalNotifier.swift in Sources */,
 				934C4C4A203331A900E85BBB /* TrialPeriod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

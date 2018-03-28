@@ -10,9 +10,22 @@ import Foundation
 
 class TrialDateHandler {
     
+    let calendar = NSCalendar.current
+    let date = Date()
+    
+    func secondsToCancelMinusOneDay(cancelDate: Date) -> Double {
+        let currentDate = calendar.startOfDay(for: date)
+        let cancelDate = calendar.startOfDay(for: cancelDate)
+        let components = calendar.dateComponents([.second], from: currentDate, to: cancelDate)
+        if let seconds = components.second {
+            print("seonds added to notification")
+            return (Double(seconds - 86400))
+        }
+        return 0
+    }
+    
     func timeToCancelTrial(cancelDate: Date) -> Bool {
-        let calendar = NSCalendar.current
-        let currentDate = calendar.startOfDay(for: Date())
+        let currentDate = calendar.startOfDay(for: date)
         let cancelDate = calendar.startOfDay(for: cancelDate)
         let components = calendar.dateComponents([.day], from: currentDate, to: cancelDate)
         if let days = components.day {
@@ -24,6 +37,8 @@ class TrialDateHandler {
         }
         return false
     }
+    
+    
     
     
     

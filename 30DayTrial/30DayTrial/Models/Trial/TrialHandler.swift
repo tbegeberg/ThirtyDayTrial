@@ -15,6 +15,7 @@ class TrialHandler {
     var trialsArray = [TrialPeriod]()
     var array = [[String:Any]]()
     
+    
     func getTrials()  {
         if let json = UserDefaults.standard.object(forKey: "Trials") as? [[String : Any]] {
             for trials in json {
@@ -38,7 +39,15 @@ class TrialHandler {
         } else {
             self.trialsArray.append(trial)
             self.saveTrials()
+            let trialDateHandler = TrialDateHandler()
+            let timeToCancelMinusOneDay = trialDateHandler.secondsToCancelMinusOneDay(cancelDate: trial.cancellationTime)
+            let notification = LocalNotifier()
+            notification.title = "Trials"
+            notification.subtitle = "Action Needed"
+            notification.body = "\(trial.trialName) needs to be cancelled"
+            notification.addLocalNotification(notification: notification, timeToCancelMinusOneDay: timeToCancelMinusOneDay)
         }
+        
     }
     
     func deleteTrial(trialID: UUID) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import UserNotifications
 
 class TrialListViewController: UIViewController {
 
@@ -19,7 +20,6 @@ class TrialListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
-        
         TrialHandler.shared.getTrials()
         self.dataSource = TrialTableViewDatasource(trials: TrialHandler.shared.trialsArray, editEnabled: true)
         self.trialTable.dataSource = dataSource
@@ -31,6 +31,7 @@ class TrialListViewController: UIViewController {
             if trialDateHandler.timeToCancelTrial(cancelDate: cancelTime) == true {
                 trialsCancelArray.append(trial.trialName)
             }
+            
         }
         showCancelAlerts()
     }
