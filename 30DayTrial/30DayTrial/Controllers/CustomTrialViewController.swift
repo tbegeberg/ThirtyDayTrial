@@ -11,6 +11,9 @@ import SnapKit
 
 class CustomTrialViewController: UIViewController {
 
+    //Keyboard not showing
+    //Timeinterval notification during setting crash
+    
     let alert = AlertHelper()
     let trialNameTextfield = CustomUITextField(userCanEdit: true)
     let trialStartDateTextField = CustomUITextField(userCanEdit: false)

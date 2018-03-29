@@ -10,13 +10,14 @@ import Foundation
 
 class TrialHandler {
     
+    //TrialManager imellem UI og DB(TrialHandler)
+    
     static let shared = TrialHandler ()
     
     var trialsArray = [TrialPeriod]()
     var array = [[String:Any]]()
     
-    
-    func getTrials()  {
+    func getTrials(completionHandler: @escaping (TrialPeriod)->()) {
         if let json = UserDefaults.standard.object(forKey: "Trials") as? [[String : Any]] {
             for trials in json {
                 guard let jsonData = try? JSONSerialization.data(withJSONObject: trials) else { return }
@@ -26,6 +27,7 @@ class TrialHandler {
                         return
                     } else {
                         self.trialsArray.append(decodedTrial)
+                        completionHandler(decodedTrial)
                     }
                 }
             }
@@ -39,7 +41,7 @@ class TrialHandler {
         } else {
             self.trialsArray.append(trial)
             self.saveTrials()
-            let trialDateHandler = TrialDateHandler()
+            let trialDateHandler = TrialCancelDateHandler()
             let timeToCancelMinusOneDay = trialDateHandler.secondsToCancelMinusOneDay(cancelDate: trial.cancellationTime)
             let notification = LocalNotifier()
             notification.title = "Trials"

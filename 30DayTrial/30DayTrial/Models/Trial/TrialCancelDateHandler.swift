@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TrialDateHandler {
+class TrialCancelDateHandler {
     
     let calendar = NSCalendar.current
     let date = Date()
@@ -38,8 +38,17 @@ class TrialDateHandler {
         return false
     }
     
-    
-    
-    
+    func findTrialNamesToCancel(trialArray: [TrialPeriod]) -> [String] {
+        var trialToCancelArray = [String]()
+        for trial in trialArray {
+            let cancelTime = trial.cancellationTime
+            let trialDateHandler = TrialCancelDateHandler()
+            if trialDateHandler.timeToCancelTrial(cancelDate: cancelTime) == true {
+                trialToCancelArray.append(trial.trialName)
+            }
+        }
+        return trialToCancelArray
+    }
+
     
 }

@@ -10,6 +10,9 @@ import UIKit
 
 class StandardTrialViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate {
     
+    //Remove cancel time fra standard list
+    
+    
     @IBOutlet weak var tableView: UITableView!
     var dataSource: TrialTableViewDatasource?
     private var standardTrials: [TrialPeriod] = DataStandardTrials.createList()
