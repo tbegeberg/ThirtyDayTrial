@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import AVFoundation
+import UIKit
 
 class TrialCancelDateHandler {
     
     let calendar = NSCalendar.current
     let date = Date()
+    var trialsToCancelArray = [String]()
     
     func secondsToCancelMinusOneDay(cancelDate: Date) -> Double {
         let currentDate = calendar.startOfDay(for: date)
@@ -38,16 +41,29 @@ class TrialCancelDateHandler {
         return false
     }
     
-    func findTrialNamesToCancel(trialArray: [TrialPeriod]) -> [String] {
-        var trialToCancelArray = [String]()
+    func findTrialNamesToCancel(trialArray: [TrialPeriod]) {
+        self.trialsToCancelArray = [String]()
         for trial in trialArray {
             let cancelTime = trial.cancellationTime
             let trialDateHandler = TrialCancelDateHandler()
             if trialDateHandler.timeToCancelTrial(cancelDate: cancelTime) == true {
-                trialToCancelArray.append(trial.trialName)
+                trialsToCancelArray.append(trial.trialName)
             }
         }
-        return trialToCancelArray
+    }
+    
+    func showCancelAlerts(controller: UIViewController) {
+        let controller = controller
+        if let trialToCancel = self.trialsToCancelArray.first {
+            AudioServicesPlayAlertSound(SystemSoundID(1322))
+            let alert = UIAlertController(title: "Alert", message: "Time To Cancel Trial: \(trialToCancel)", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .default) { action in
+                self.trialsToCancelArray.remove(at: 0)
+                self.showCancelAlerts(controller: controller)
+            }
+            alert.addAction(okayAction)
+            controller.present(alert, animated: true, completion: nil)
+        }
     }
 
     
