@@ -12,11 +12,11 @@ import UIKit
 class TrialTableViewDatasource: NSObject, UITableViewDataSource {
     
     var trials: [TrialPeriod]
-    var editEnabled: Bool?
+    var editEeditListEnabled: Bool?
     
     init(trials: [TrialPeriod], editEnabled: Bool) {
         self.trials = trials
-        self.editEnabled = editEnabled
+        self.editEeditListEnabled = editEnabled
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +33,7 @@ class TrialTableViewDatasource: NSObject, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if editEnabled == true {
+        if editEeditListEnabled == true {
             return true
         } else {
             return false

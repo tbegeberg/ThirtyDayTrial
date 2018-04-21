@@ -17,7 +17,7 @@ class TrialHandler {
     var trialsArray = [TrialPeriod]()
     var array = [[String:Any]]()
     
-    func getTrials(completionHandler: @escaping (TrialPeriod)->()) {
+    func getTrials(completionHandler: @escaping ([TrialPeriod])->()) {
         if let json = UserDefaults.standard.object(forKey: "Trials") as? [[String : Any]] {
             for trials in json {
                 guard let jsonData = try? JSONSerialization.data(withJSONObject: trials) else { return }
@@ -27,10 +27,10 @@ class TrialHandler {
                         return
                     } else {
                         self.trialsArray.append(decodedTrial)
-                        completionHandler(decodedTrial)
                     }
                 }
             }
+            completionHandler(self.trialsArray)
         }
     }
     

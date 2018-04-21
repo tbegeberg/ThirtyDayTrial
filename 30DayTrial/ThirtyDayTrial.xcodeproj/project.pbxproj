@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93092970203AEFAE00C87E46 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309296F203AEFAE00C87E46 /* Error.swift */; };
-		9314207B206D4810003C5DFA /* SerchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314207A206D4810003C5DFA /* SerchListViewController.swift */; };
+		9314207B206D4810003C5DFA /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314207A206D4810003C5DFA /* SearchListViewController.swift */; };
 		9323E638204D7DD10032C60B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9323E635204D7DC70032C60B /* SnapKit.framework */; };
 		933B70D0206A91A300EA4217 /* DateFormatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B70CF206A91A300EA4217 /* DateFormatable.swift */; };
 		933B70D2206A977500EA4217 /* TrialCancelDateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B70D1206A977500EA4217 /* TrialCancelDateHandler.swift */; };
@@ -31,6 +31,11 @@
 		93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD7204E9C7200E0DB0D /* ValidatorError.swift */; };
 		93676DDA204E9CCE00E0DB0D /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DD9204E9CCE00E0DB0D /* StringValidator.swift */; };
 		93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93676DDB204E9D7C00E0DB0D /* StringHolder.swift */; };
+		93863EE12078C511007DF38E /* Listable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93863EE02078C511007DF38E /* Listable.swift */; };
+		9386EDCC2077BEAD0009F082 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386EDCB2077BEAD0009F082 /* State.swift */; };
+		9386EDD12077C1EA0009F082 /* Appcontext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386EDD02077C1EA0009F082 /* Appcontext.swift */; };
+		9386EDD32077C25E0009F082 /* TrialsLoadedFromSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386EDD22077C25E0009F082 /* TrialsLoadedFromSave.swift */; };
+		9386EDD52077C2640009F082 /* UserChoiceOfStandardTrials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386EDD42077C2640009F082 /* UserChoiceOfStandardTrials.swift */; };
 		9395E619206B878F00E3574C /* LocalNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395E618206B878F00E3574C /* LocalNotifier.swift */; };
 		939C71AB20610E4C00E068D2 /* DataStandardTrials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */; };
 		93B2BB26206C137600E2BF2E /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B2BB25206C137600E2BF2E /* BaseListViewController.swift */; };
@@ -57,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		9309296F203AEFAE00C87E46 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		9314207A206D4810003C5DFA /* SerchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchListViewController.swift; sourceTree = "<group>"; };
+		9314207A206D4810003C5DFA /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		9323E62F204D7DC70032C60B /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		933B70CF206A91A300EA4217 /* DateFormatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatable.swift; sourceTree = "<group>"; };
 		933B70D1206A977500EA4217 /* TrialCancelDateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialCancelDateHandler.swift; sourceTree = "<group>"; };
@@ -82,6 +87,11 @@
 		93676DD7204E9C7200E0DB0D /* ValidatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorError.swift; sourceTree = "<group>"; };
 		93676DD9204E9CCE00E0DB0D /* StringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidator.swift; sourceTree = "<group>"; };
 		93676DDB204E9D7C00E0DB0D /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
+		93863EE02078C511007DF38E /* Listable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listable.swift; sourceTree = "<group>"; };
+		9386EDCB2077BEAD0009F082 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		9386EDD02077C1EA0009F082 /* Appcontext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appcontext.swift; sourceTree = "<group>"; };
+		9386EDD22077C25E0009F082 /* TrialsLoadedFromSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialsLoadedFromSave.swift; sourceTree = "<group>"; };
+		9386EDD42077C2640009F082 /* UserChoiceOfStandardTrials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChoiceOfStandardTrials.swift; sourceTree = "<group>"; };
 		9395E618206B878F00E3574C /* LocalNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifier.swift; sourceTree = "<group>"; };
 		939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStandardTrials.swift; sourceTree = "<group>"; };
 		93B2BB25206C137600E2BF2E /* BaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 		934C4C472033316600E85BBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9386EDCF2077C1D60009F082 /* States */,
 				93676DCC204E8F3D00E0DB0D /* Validation */,
 				9352F6E020482A2C003A75C0 /* Generic */,
 				9352F6DF20482A1C003A75C0 /* Trial */,
@@ -155,11 +166,9 @@
 		934C4C482033317100E85BBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				934C4C342033313100E85BBB /* TrialListViewController.swift */,
-				93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */,
-				9352F6E32048304A003A75C0 /* CustomTrialViewController.swift */,
+				93F13218207527AA000F9623 /* Old */,
 				93B2BB25206C137600E2BF2E /* BaseListViewController.swift */,
-				9314207A206D4810003C5DFA /* SerchListViewController.swift */,
+				9314207A206D4810003C5DFA /* SearchListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +181,7 @@
 				934C4C49203331A900E85BBB /* TrialPeriod.swift */,
 				9352F6E120482A59003A75C0 /* TrialTableViewDatasource.swift */,
 				939C71AA20610E4C00E068D2 /* DataStandardTrials.swift */,
+				93863EE02078C511007DF38E /* Listable.swift */,
 			);
 			path = Trial;
 			sourceTree = "<group>";
@@ -209,6 +219,27 @@
 				93676DDB204E9D7C00E0DB0D /* StringHolder.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		9386EDCF2077C1D60009F082 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				9386EDCB2077BEAD0009F082 /* State.swift */,
+				9386EDD02077C1EA0009F082 /* Appcontext.swift */,
+				9386EDD22077C25E0009F082 /* TrialsLoadedFromSave.swift */,
+				9386EDD42077C2640009F082 /* UserChoiceOfStandardTrials.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		93F13218207527AA000F9623 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				934C4C342033313100E85BBB /* TrialListViewController.swift */,
+				93C70218205BF56A00F75A99 /* StandardTrialViewController.swift */,
+				9352F6E32048304A003A75C0 /* CustomTrialViewController.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9352F6E6204842C1003A75C0 /* CustomUIControls.swift in Sources */,
+				93863EE12078C511007DF38E /* Listable.swift in Sources */,
 				934C4C352033313100E85BBB /* TrialListViewController.swift in Sources */,
 				93676DD8204E9C7200E0DB0D /* ValidatorError.swift in Sources */,
 				933B70D0206A91A300EA4217 /* DateFormatable.swift in Sources */,
@@ -314,14 +346,17 @@
 				9352F6EA20484339003A75C0 /* CustomUIBars.swift in Sources */,
 				934C4C332033313100E85BBB /* AppDelegate.swift in Sources */,
 				93B2BB26206C137600E2BF2E /* BaseListViewController.swift in Sources */,
+				9386EDD52077C2640009F082 /* UserChoiceOfStandardTrials.swift in Sources */,
 				933B70D2206A977500EA4217 /* TrialCancelDateHandler.swift in Sources */,
 				9352F6E8204842D6003A75C0 /* CustomUITextViews.swift in Sources */,
 				93676DDC204E9D7C00E0DB0D /* StringHolder.swift in Sources */,
+				9386EDCC2077BEAD0009F082 /* State.swift in Sources */,
 				93676DD2204E9B7700E0DB0D /* NotValidatedFeedback.swift in Sources */,
 				93C70219205BF56A00F75A99 /* StandardTrialViewController.swift in Sources */,
 				9352F6E42048304A003A75C0 /* CustomTrialViewController.swift in Sources */,
 				934C4C4C20335A1800E85BBB /* TrialHandler.swift in Sources */,
-				9314207B206D4810003C5DFA /* SerchListViewController.swift in Sources */,
+				9314207B206D4810003C5DFA /* SearchListViewController.swift in Sources */,
+				9386EDD12077C1EA0009F082 /* Appcontext.swift in Sources */,
 				9352F6E220482A59003A75C0 /* TrialTableViewDatasource.swift in Sources */,
 				93676DD4204E9BCA00E0DB0D /* Validatable.swift in Sources */,
 				93E4EC65203D7E0D00B28F24 /* AlertHelper.swift in Sources */,
@@ -331,6 +366,7 @@
 				93092970203AEFAE00C87E46 /* Error.swift in Sources */,
 				9395E619206B878F00E3574C /* LocalNotifier.swift in Sources */,
 				934C4C4A203331A900E85BBB /* TrialPeriod.swift in Sources */,
+				9386EDD32077C25E0009F082 /* TrialsLoadedFromSave.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

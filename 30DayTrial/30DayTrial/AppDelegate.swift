@@ -10,33 +10,57 @@ import UIKit
 import CoreData
 import AVFoundation
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BaselistViewControllerDelegate, AppdelegateContext {
+    func showSavedTrials(trials: [TrialPeriod]) {
+        
+    }
+    
+    func changeState(state: State) {
+        self.state = state
+        state.enterState(context: self)
+    }
+    
+    
+    func showStandardTrials() {
+        
+    }
+    
 
     var window: UIWindow?
-    let mainController = BaseListViewController()
+    var mainController = BaseListViewController()
+    var state: State?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let notification = LocalNotifier() //Placer here??
+        let notification = LocalNotifier()
         notification.initNotificationSetupCheck()
-        loadTrials()
-        mainController.dataSource  = TrialTableViewDatasource(trials: mainController.trialArray, editEnabled: true)
+   
+        mainController.appDelegate = self
+        mainController.dataSource = TrialTableViewDatasource(trials: mainController.trialArray, editEnabled: true)
+        mainController.title = "Trials"
         window = UIWindow(frame: UIScreen.main.bounds)
-        mainController.view.backgroundColor = UIColor.white
         let navigationController = UINavigationController(rootViewController: mainController)
-        navigationController.navigationBar.isTranslucent = false
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         let trialCancelDateHandler = TrialCancelDateHandler()
         trialCancelDateHandler.findTrialNamesToCancel(trialArray: mainController.trialArray)
         trialCancelDateHandler.showCancelAlerts(controller: mainController)
+        TrialHandler.shared.getTrials { trials in
+            let state = TrialsLoadedFromSave(trials: trials)
+            self.changeState(state: state)
+        }
+        
+        
         return true
     }
     
-    func loadTrials() {
-        TrialHandler.shared.getTrials { trial in
-            self.mainController.trialArray.append(trial)
-        }
+ 
+    
+    func baseListViewControllerChangeToSearch(sender: BaseListViewController) {
+        let searchListViewController = SearchListViewController()
+        searchListViewController.title = "Add Standard Trial"
+        sender.navigationController?.pushViewController(searchListViewController, animated: true)
     }
     
 }
