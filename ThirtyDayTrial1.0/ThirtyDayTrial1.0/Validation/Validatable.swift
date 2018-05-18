@@ -9,14 +9,14 @@
 import UIKit
 
 protocol Validatable {
-    var textFieldName:String { get }
+    var textFieldID:String { get }
     var textFieldValue: UITextField { get }
 }
 
 extension UITextField: Validatable {
     
-    var textFieldName: String {
-        return self.textFieldName
+    var textFieldID: String {
+        return self.textFieldID
     }
     
     var textFieldValue: UITextField {

@@ -16,7 +16,7 @@ protocol NotValidatedFeedback {
 extension UITextField: NotValidatedFeedback {
     func showFeedback(problem: String) {
         self.placeholder = problem
-        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.shadowColor = UIColor.red.cgColor
     }
 }
 

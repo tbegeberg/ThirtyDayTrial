@@ -9,6 +9,5 @@
 import Foundation
 
 protocol ItemClickedResponder {
-    func itemClicked(item: TrialPeriod, sender: BaseListViewController)
-    func itemSwiped(item: Listable)
+    func itemClicked(item: Trial)
 }

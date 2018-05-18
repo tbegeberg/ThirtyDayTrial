@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 protocol State {
-    func selectedItemFromList(context: AppContext, item: TrialPeriod, sender: BaseListViewController)
+    func buttomClicked(context: AppContext, trialAndSender: TrialAndSender)
+    func selectedItemFromList(context: AppContext, item: Trial)
     func swipedItemFromList(context: AppContext, item: Listable)
     func forward(context: AppContext)
     func back(context: AppContext)

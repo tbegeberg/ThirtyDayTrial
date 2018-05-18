@@ -9,8 +9,8 @@
 import UIKit
 
 struct StringHolder {
-    var textFieldID:String
-    var textField:UITextField
+    var textFieldID:  String
+    var textField: UITextField
 }
 
 extension StringHolder: Validatable {

@@ -14,7 +14,7 @@ protocol Listable {
     var listID: UUID { get }
 }
 
-extension TrialPeriod: Listable {
+extension Trial: Listable {
     
     var title: String {
         get {
@@ -34,4 +34,24 @@ extension TrialPeriod: Listable {
             return trialID
         }
     }
+}
+
+extension StandardTrial: Listable {
+    var listID: UUID {
+        return UUID()
+    }
+
+    var title: String {
+        get {
+            return trialName
+        }
+    }
+    var subtitle: String {
+        get {
+            let value = "Cancel after: \(String(daysBeforeCancelTime)) days"
+            return value
+        }
+    }
+    
+   
 }

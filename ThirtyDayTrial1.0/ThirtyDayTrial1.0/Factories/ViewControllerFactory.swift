@@ -10,7 +10,7 @@ import Foundation
 
 class ViewControllerFactory {
     
-    static func buildTrialsList(reponder: ListViewResponder) -> BaseListViewController {
+    static func buildTrialsListView(reponder: ListViewResponder) -> BaseListViewController {
         let trialListViewController = BaseListViewController()
         trialListViewController.editEeditListEnabled = true
         trialListViewController.responder = reponder
@@ -18,19 +18,33 @@ class ViewControllerFactory {
         return trialListViewController
     }
     
-    static func buildSearchList(reponder: ListViewResponder) -> SearchListViewController {
+    static func buildSearchListView(reponder: ListViewResponder) -> SearchListViewController {
         let searchListViewController = SearchListViewController()
         searchListViewController.editEeditListEnabled = false
         searchListViewController.responder = reponder
-        searchListViewController.title = "Search and Add Trials"
+        searchListViewController.title = "Click to add trial"
         return searchListViewController
     }
     
-    static func buildCustomTrial() -> CustomTrialViewController {
-        let customTrialViewController = CustomTrialViewController()
-        customTrialViewController.title = "Add Custom Trial"
+    static func buildAddCustomTrialView(reponder: AddTrialViewResponder) -> AddTrialViewController {
+        let customTrialViewController = AddTrialViewController()
+        TextViewFactory.setTextFieldsToDesign(view: customTrialViewController)
+        TextViewFactory.setTextFieldsDelegate(view: customTrialViewController)
+        customTrialViewController.responder = reponder
+        customTrialViewController.title = "Enter Trial Info"
         return customTrialViewController
     }
     
+    static func buildAddStandardTrialView(reponder: AddTrialViewResponder, item: Trial) -> AddTrialViewController {
+        let customTrialViewController = AddTrialViewController()
+        TextViewFactory.setTextFieldsToDesign(view: customTrialViewController)
+        TextViewFactory.setTextFieldsDelegate(view: customTrialViewController)
+        ViewModel.fillTextFields(trial: item, view: customTrialViewController)
+        ViewModel.setDates(trial: item, view: customTrialViewController)
+        customTrialViewController.responder = reponder
+        customTrialViewController.title = "Save or Change Dates"
+        return customTrialViewController
+    }
+
     
 }

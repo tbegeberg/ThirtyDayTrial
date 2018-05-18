@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ListViewResponder:AnyObject,ItemClickedResponder {
+protocol ListViewResponder:AnyObject,ItemClickedResponder, ItemSwidedResponder {
     
 }
 
@@ -48,9 +48,6 @@ class BaseListViewController: UITableViewController {
             self.responder?.itemSwiped(item: self.list[indexPath.row])
             list.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
         }
     }
-    
-    
 }

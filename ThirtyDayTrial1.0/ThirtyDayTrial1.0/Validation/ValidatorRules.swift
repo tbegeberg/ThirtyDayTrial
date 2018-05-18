@@ -18,10 +18,10 @@ class IsNotEmptyRule:ValidatorRule {
         if validatable.textFieldValue.text == "" {
             
             if let feedbacker = validatable.textFieldValue as? NotValidatedFeedback {
-                feedbacker.showFeedback(problem: "Please enter \(validatable.textFieldName)")
+                feedbacker.showFeedback(problem: "\(validatable.textFieldID)")
             }
             
-            throw ValidatorError.StringWasEmpty("Empty field")
+            throw ValidatorError.StringWasEmpty()
         }
     }
 }
@@ -34,10 +34,12 @@ class IsNotANumber:ValidatorRule {
             if let feedbacker = validatable.textFieldValue as? NotValidatedFeedback {
                 feedbacker.showFeedback(problem: "Please enter a number")
             }
-            throw ValidatorError.StringWasEmpty("Please enter a number in \(validatable.textFieldName)")
+            throw ValidatorError.StringWasEmpty()
         }
     }
 }
+
+
 
 extension String {
     var isNumeric: Bool {

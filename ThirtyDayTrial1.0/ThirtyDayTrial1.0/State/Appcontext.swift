@@ -9,17 +9,26 @@
 import Foundation
 import UIKit
 
-protocol AppContext: ListViewResponder {
+protocol AppContext: ListViewResponder, AddTrialViewResponder {
     var state:State? { get set }
     func present(view: ViewProvider)
     func changeState(state: State)
 }
 
 extension ItemClickedResponder where Self:AppContext {
-    func itemClicked(item: TrialPeriod, sender: BaseListViewController) {
-        self.state?.selectedItemFromList(context: self, item: item, sender: sender)
+    func itemClicked(item: Trial) {
+        self.state?.selectedItemFromList(context: self, item: item)
     }
+}
+
+extension ItemSwidedResponder where Self:AppContext {
     func itemSwiped(item: Listable) {
         self.state?.swipedItemFromList(context: self, item: item)
+    }
+}
+
+extension ButtonClickedResponder where Self:AppContext {
+    func buttomClicked(trialAndSender: TrialAndSender) {
+        self.state?.buttomClicked(context: self, trialAndSender: trialAndSender)
     }
 }

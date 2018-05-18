@@ -20,13 +20,11 @@ class UIControlsFactory {
     
     static func buildButton(title: String) -> UIButton {
         let button = UIButton()
-        button.layer.cornerRadius = 8.0
-        button.layer.borderColor = UIColor(red: 14/255, green: 122/255, blue: 254/255, alpha: 1.0).cgColor
-        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 50
+        button.clipsToBounds = true
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont(name: (button.titleLabel?.font.fontName)!, size: 15)
+        button.titleLabel?.font = UIFont(name: (button.titleLabel?.font.fontName)!, size: 20)
         button.backgroundColor = UIColor(red: 14/255, green: 122/255, blue: 254/255, alpha: 1.0)
-        button.sizeToFit()
         return button
         
     }
