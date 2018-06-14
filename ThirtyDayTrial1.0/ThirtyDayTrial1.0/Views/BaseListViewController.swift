@@ -16,7 +16,7 @@ class BaseListViewController: UITableViewController {
 
     var list = [Listable]()
     weak var responder:ListViewResponder?
-    var editEeditListEnabled: Bool?
+    var editEeditListEnabled: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,7 @@ class BaseListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if editEeditListEnabled == true {
-            return true
-        } else {
-            return false
-        }
+        return editEeditListEnabled
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

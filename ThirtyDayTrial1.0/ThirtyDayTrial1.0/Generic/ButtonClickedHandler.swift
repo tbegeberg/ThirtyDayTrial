@@ -18,7 +18,7 @@ class ButtonClickedHandler {
     
     private func saveButtonClicked(item: Trial, completionHandler: @escaping (ResultButtonClicked)->()) {
         do {
-            try TrialHandler.shared.setTrial(trial: item)
+            try TrialHandler.shared.saveTrialOnDevice(trial: item)
             completionHandler(ResultButtonClicked.success(item))
         }
         catch TrialError.NoTimeInterval(let error) {
@@ -29,7 +29,7 @@ class ButtonClickedHandler {
         }
     }
    
-    func userClickedButtonToSaveTrialFeedback(item: Trial) -> (String, String) {
+    func feedback(item: Trial) -> (String, String) {
         var title = String()
         var message = String()
         self.saveButtonClicked(item: item) { (result:ResultButtonClicked) in

@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ButtonClickedResponder {
-    func buttomClicked(trialAndSender: TrialAndSender)
+    func buttonClicked(trial: Trial, view: UIViewController)
 }

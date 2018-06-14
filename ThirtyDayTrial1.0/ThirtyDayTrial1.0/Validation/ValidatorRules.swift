@@ -15,13 +15,8 @@ protocol ValidatorRule {
 class IsNotEmptyRule:ValidatorRule {
     
     func isValid(validatable: Validatable) throws {
-        if validatable.textFieldValue.text == "" {
-            
-            if let feedbacker = validatable.textFieldValue as? NotValidatedFeedback {
-                feedbacker.showFeedback(problem: "\(validatable.textFieldID)")
-            }
-            
-            throw ValidatorError.StringWasEmpty()
+        if validatable.textField.text == "" {
+            throw ValidatorError.StringWasEmpty(validatable)
         }
     }
 }
@@ -30,11 +25,8 @@ class IsNotANumber:ValidatorRule {
     
     func isValid(validatable: Validatable) throws {
       
-        if validatable.textFieldValue.textVerifier.isNumeric == false {
-            if let feedbacker = validatable.textFieldValue as? NotValidatedFeedback {
-                feedbacker.showFeedback(problem: "Please enter a number")
-            }
-            throw ValidatorError.StringWasEmpty()
+        if validatable.textField.textVerifier.isNumeric == false {
+            throw ValidatorError.StringWasEmpty(validatable)
         }
     }
 }

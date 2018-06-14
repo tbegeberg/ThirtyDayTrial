@@ -11,8 +11,8 @@ import UIKit
 
 class TextViewFactory {
     
-    static func buildTextField() -> UITextField {
-        let textField = UITextField()
+    static func buildTextField() -> dateTextField {
+        let textField = dateTextField()
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftView = paddingView
         textField.leftViewMode = UITextFieldViewMode.always
@@ -38,18 +38,11 @@ class TextViewFactory {
         return label
     }
     
-    static func setTextFieldsDelegate(view: AddTrialViewController) {
-        view.trialName.textField.delegate = view
-        view.trialStartDate.textField.delegate = view
-        view.trialCancelDate.textField.delegate = view
-        view.trialDays.textField.delegate = view
-    }
-    
     static func setTextFieldsToDesign(view: AddTrialViewController) {
-        view.trialName.textField = TextViewFactory.buildTextField()
-        view.trialStartDate.textField = TextViewFactory.buildTextField()
-        view.trialCancelDate.textField = TextViewFactory.buildTextField()
-        view.trialDays.textField = TextViewFactory.buildTextField()
+        view.trialName = TextViewFactory.buildTextField()
+        view.trialStartDate = TextViewFactory.buildTextField()
+        view.trialCancelDate = TextViewFactory.buildTextField()
+        view.trialDays = TextViewFactory.buildTextField()
     }
 
 }

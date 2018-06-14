@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//UserSaves, UserSelectItem
+
 protocol AppContext: ListViewResponder, AddTrialViewResponder {
     var state:State? { get set }
     func present(view: ViewProvider)
@@ -28,7 +30,7 @@ extension ItemSwidedResponder where Self:AppContext {
 }
 
 extension ButtonClickedResponder where Self:AppContext {
-    func buttomClicked(trialAndSender: TrialAndSender) {
-        self.state?.buttomClicked(context: self, trialAndSender: trialAndSender)
+    func buttonClicked(trial: Trial, view: UIViewController) {
+        self.state?.buttonClicked(context: self, trial: trial, view: view)
     }
 }

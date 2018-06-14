@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AddStandardTrial: State {
 
@@ -16,11 +17,11 @@ class AddStandardTrial: State {
         self.trialChoosenFromSearchList = trialChoosenFromSearchList
     }
     
-    func buttomClicked(context: AppContext, trialAndSender: TrialAndSender) {
+    func buttonClicked(context: AppContext, trial: Trial, view: UIViewController) {
         let buttonClickedHandler = ButtonClickedHandler()
         let alert = AlertHandler()
-        let messageToUser = buttonClickedHandler.userClickedButtonToSaveTrialFeedback(item: trialAndSender.trial)
-        alert.showAlert(fromController: trialAndSender.sender, title: messageToUser.0, message: messageToUser.1)
+        let messageToUser = buttonClickedHandler.feedback(item: trial)
+        alert.showAlert(fromController: view, title: messageToUser.0, message: messageToUser.1)
         if messageToUser.0 == "Success" {
             context.changeState(state: TrialsLoadedFromSave())
         }
@@ -45,6 +46,8 @@ class AddStandardTrial: State {
     func enterState(context: AppContext) {
         let responder: AddTrialViewResponder = context
         let view = ViewControllerFactory.buildAddStandardTrialView(reponder: responder, item: trialChoosenFromSearchList)
+        view.fillTextFields(trial: trialChoosenFromSearchList)
+        view.setDates(trial: trialChoosenFromSearchList)
         let backButton = UIBarButtonItemActionable(title: "Trials")
         backButton.actionBlock = {
             [weak self]

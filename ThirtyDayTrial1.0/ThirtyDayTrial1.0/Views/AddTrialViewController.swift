@@ -15,10 +15,10 @@ protocol AddTrialViewResponder:AnyObject,ButtonClickedResponder {
 
 class AddTrialViewController: UIViewController, UITextFieldDelegate {
     
-    var trialName = UserInput()
-    var trialStartDate = UserInput()
-    var trialCancelDate = UserInput()
-    var trialDays = UserInput()
+    var trialName = dateTextField()
+    var trialStartDate = dateTextField()
+    var trialCancelDate = dateTextField()
+    var trialDays = dateTextField()
     let datePicker = UIControlsFactory.buildDatePicer()
     var toolBar = UIToolbar()
     weak var responder: AddTrialViewResponder?
@@ -28,9 +28,10 @@ class AddTrialViewController: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor.white
         createToolBar()
         
-        self.view.addSubview(trialName.textField)
-        self.trialName.textField.placeholder = "Enter Trial Name"
-        self.trialName.textField.snp.makeConstraints { (make) in
+        self.trialName.delegate = self
+        self.view.addSubview(trialName)
+        self.trialName.placeholder = "Enter Trial Name"
+        self.trialName.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(100)
             make.left.equalTo(self.view).offset(80)
             make.right.equalTo(self.view).offset(-80)
@@ -39,57 +40,60 @@ class AddTrialViewController: UIViewController, UITextFieldDelegate {
         let trialNameLabel = TextViewFactory.buildUILabel(text: "Name")
         self.view.addSubview(trialNameLabel)
         trialNameLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(trialName.textField).offset(-23)
-            make.left.equalTo(trialName.textField)
+            make.bottom.equalTo(trialName).offset(-23)
+            make.left.equalTo(trialName)
         }
         
-        self.trialStartDate.textField.inputView = datePicker
-        self.trialStartDate.textField.inputAccessoryView = toolBar
-        self.view.addSubview(trialStartDate.textField)
-        self.trialStartDate.textField.tag = 1
-        self.trialStartDate.textField.placeholder = "Pick Start Date"
-        self.trialStartDate.textField.snp.makeConstraints { (make) in
-            make.top.equalTo(trialName.textField).offset(45)
-            make.left.equalTo(trialName.textField)
-            make.right.equalTo(trialName.textField)
+        self.trialStartDate.inputView = datePicker
+        self.trialStartDate.inputAccessoryView = toolBar
+        self.trialStartDate.delegate = self
+        self.view.addSubview(trialStartDate)
+        self.trialStartDate.tag = 1
+        self.trialStartDate.placeholder = "Pick Start Date"
+        self.trialStartDate.snp.makeConstraints { (make) in
+            make.top.equalTo(trialName).offset(45)
+            make.left.equalTo(trialName)
+            make.right.equalTo(trialName)
         }
-        self.trialStartDate.textField.addTarget(self, action: #selector(setUserInput), for: .editingDidEnd)
+        self.trialStartDate.addTarget(self, action: #selector(setUserInput), for: .editingDidEnd)
         
         let trialStartDateLabel = TextViewFactory.buildUILabel(text: "Start")
         self.view.addSubview(trialStartDateLabel)
         trialStartDateLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(trialStartDate.textField).offset(-23)
-            make.left.equalTo(trialStartDate.textField)
+            make.bottom.equalTo(trialStartDate).offset(-23)
+            make.left.equalTo(trialStartDate)
         }
         
-        self.trialCancelDate.textField.inputView = datePicker
-        self.trialCancelDate.textField.inputAccessoryView = toolBar
-        self.view.addSubview(trialCancelDate.textField)
-        self.trialCancelDate.textField.tag = 2
-        self.trialCancelDate.textField.placeholder = "Pick A Cancel Date"
-        self.trialCancelDate.textField.snp.makeConstraints { (make) in
-            make.top.equalTo(trialStartDate.textField).offset(45)
-            make.left.equalTo(trialName.textField)
-            make.right.equalTo(trialName.textField)
+        self.trialCancelDate.inputView = datePicker
+        self.trialCancelDate.inputAccessoryView = toolBar
+        self.trialCancelDate.delegate = self
+        self.view.addSubview(trialCancelDate)
+        self.trialCancelDate.tag = 2
+        self.trialCancelDate.placeholder = "Pick A Cancel Date"
+        self.trialCancelDate.snp.makeConstraints { (make) in
+            make.top.equalTo(trialStartDate).offset(45)
+            make.left.equalTo(trialName)
+            make.right.equalTo(trialName)
         }
-        self.trialCancelDate.textField.addTarget(self, action: #selector(setUserInput), for: .editingDidEnd)
+        self.trialCancelDate.addTarget(self, action: #selector(setUserInput), for: .editingDidEnd)
         
         let trialCancelDateLabel = TextViewFactory.buildUILabel(text: "Cancel")
         self.view.addSubview(trialCancelDateLabel)
         trialCancelDateLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(trialCancelDate.textField).offset(-23)
-            make.left.equalTo(trialCancelDate.textField)
+            make.bottom.equalTo(trialCancelDate).offset(-23)
+            make.left.equalTo(trialCancelDate)
         }
         
+        self.trialDays.textField.delegate = self
         self.view.addSubview(trialDays.textField)
         self.trialDays.textField.placeholder = "Enter Number Of Days"
         self.trialDays.textField.keyboardType = .numberPad
         self.trialDays.textField.snp.makeConstraints { (make) in
-            make.top.equalTo(trialCancelDate.textField).offset(45)
-            make.left.equalTo(trialName.textField)
-            make.right.equalTo(trialName.textField)
+            make.top.equalTo(trialCancelDate).offset(45)
+            make.left.equalTo(trialName)
+            make.right.equalTo(trialName)
         }
-        self.trialDays.textField.addTarget(self, action: #selector(setUserInput), for: .editingDidEnd)
+    
         
         let trialDaysLabel = TextViewFactory.buildUILabel(text: "Days before cancel time")
         self.view.addSubview(trialDaysLabel)
@@ -135,35 +139,40 @@ class AddTrialViewController: UIViewController, UITextFieldDelegate {
         let labelButton = UIBarButtonItem(customView:label)
         self.toolBar.setItems([flexibleSpace,flexibleSpace,labelButton,flexibleSpace,doneButton], animated: true)
     }
+    
+    func fillTextFields(trial: Trial) {
+        let dateFormatter = DateFormatable()
+        self.trialName.text = trial.trialName
+        self.trialStartDate.text = dateFormatter.string(from: trial.startDate)
+        self.trialCancelDate.text = dateFormatter.string(from: trial.cancellationTime)
+        self.trialDays.textField.text = String(trial.daysBeforeCancelTime)
+    }
+    
+    func setDates(trial: Trial) {
+        self.trialStartDate.date = trial.startDate
+        self.trialCancelDate.date = trial.cancellationTime
+    }
 
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
 
-    @objc func setUserInput(sender:UITextField) {
+    @objc func setUserInput(sender:dateTextField) {
         let dateFormatter = DateFormatable()
-        if sender.tag == 1 {
-            self.trialStartDate.textField.text = dateFormatter.string(from: datePicker.date)
-            self.trialStartDate.date = datePicker.date
-        }
-        if sender.tag == 2 {
-            self.trialCancelDate.textField.text = dateFormatter.string(from: datePicker.date)
-            self.trialCancelDate.date = datePicker.date
-        }
+        sender.date = datePicker.date
+        sender.text = dateFormatter.string(from: datePicker.date)
     }
     
     func validateUserInputs(textfield: UITextField) {
-        if let textFieldID = textfield.placeholder {
-            let stringHolder =  StringHolder(textFieldID: textFieldID, textField: textfield)
-            let validateIsText = StringValidator(rules: [IsNotEmptyRule()], subjects: [stringHolder])
-            do {
-                try validateIsText.validate()
-            } catch ValidatorError.StringWasEmpty() {
-                return
-            }
-            catch let error {
-                return
-            }
+        let validateIsText = Validator(rules: [IsNotEmptyRule()], subjects: [textfield])
+        do {
+            try validateIsText.validate()
+        } catch ValidatorError.StringWasEmpty(let validated) {
+            validated.textField.layer.shadowColor = UIColor.red.cgColor
+            validated.textField.placeholder = textfield.placeholder
+        }
+        catch let error {
+            return
         }
     }
     
@@ -178,9 +187,8 @@ class AddTrialViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let trialToSave = Trial(trialName: trialName.textField.textVerifier, startDate: trialStartDate.date, daysBeforeCancelTime: customTrialDays, cancellationTime: trialCancelDate.date)
-        let trialToSaveAndSender = TrialAndSender(trial: trialToSave, sender: self)
-        self.responder?.buttomClicked(trialAndSender: trialToSaveAndSender)
+        let trialToSave = Trial(trialName: trialName.textVerifier, startDate: trialStartDate.date, daysBeforeCancelTime: customTrialDays, cancellationTime: trialCancelDate.date)
+        self.responder?.buttonClicked(trial: trialToSave, view: self)
     }
     
 }

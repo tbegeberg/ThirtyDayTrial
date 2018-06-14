@@ -9,5 +9,5 @@
 import Foundation
 
 enum ValidatorError: LocalizedError {
-    case StringWasEmpty()
+    case StringWasEmpty(Validatable)
 }

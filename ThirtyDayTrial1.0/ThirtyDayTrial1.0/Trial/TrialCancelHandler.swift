@@ -26,7 +26,7 @@ class TrialCancelHandler {
         return 0
     }
     
-    func timeToCancelTrial(cancelDate: Date) -> Bool {
+    func oneDayBeforeTrialCancelTime(cancelDate: Date) -> Bool {
         let currentDate = calendar.startOfDay(for: date)
         let cancelDate = calendar.startOfDay(for: cancelDate)
         let components = calendar.dateComponents([.day], from: currentDate, to: cancelDate)
@@ -45,7 +45,7 @@ class TrialCancelHandler {
         for trial in trialArray {
             let cancelTime = trial.cancellationTime
             let trialCancelHandler = TrialCancelHandler()
-            if trialCancelHandler.timeToCancelTrial(cancelDate: cancelTime) == true {
+            if trialCancelHandler.oneDayBeforeTrialCancelTime(cancelDate: cancelTime) == true {
                 trialsToCancelArray.append(trial.trialName)
             }
         }

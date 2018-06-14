@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class TrialsLoadedFromSave: State {
     
-    func buttomClicked(context: AppContext, trialAndSender: TrialAndSender) {
+    func buttonClicked(context: AppContext, trial: Trial, view: UIViewController) {
         
     }
     
     func swipedItemFromList(context: AppContext, item: Listable) {
-        TrialHandler.shared.deleteTrial(trialID: item.listID)
+        TrialHandler.shared.deleteTrialOnDevice(trialID: item.listID)
     }
     
     func selectedItemFromList(context: AppContext, item: Trial) {
-        
+        fatalError("This should not happen")
     }
     
     func forward(context: AppContext) {
@@ -34,7 +35,7 @@ class TrialsLoadedFromSave: State {
         let trialCancelHandler = TrialCancelHandler()
         let responder:ListViewResponder = context
         let view = ViewControllerFactory.buildTrialsListView(reponder: responder)
-        TrialHandler.shared.getTrials { (trials) in
+        TrialHandler.shared.getTrialsOnDevice { (trials) in
             view.list = trials
             trialCancelHandler.findTrialNamesToCancel(trialArray: trials)
         }
@@ -53,6 +54,6 @@ class TrialsLoadedFromSave: State {
         view.navigationItem.setLeftBarButton(addCustomTrialButton, animated: true)
         view.navigationItem.setRightBarButton(addTrialButton, animated: true)
         context.present(view: view)
-        //trialCancelDateHandler.showCancelAlerts(controller: view)
+        trialCancelHandler.showCancelAlerts(controller: view)
     }
 }

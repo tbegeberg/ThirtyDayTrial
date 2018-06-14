@@ -11,11 +11,11 @@ import UIKit
 
 class AddTrial: State {
     
-    func buttomClicked(context: AppContext, trialAndSender: TrialAndSender) {
+    func buttonClicked(context: AppContext, trial: Trial, view: UIViewController) {
         let buttonClickedHandler = ButtonClickedHandler()
         let alert = AlertHandler()
-        let messageToUser = buttonClickedHandler.userClickedButtonToSaveTrialFeedback(item: trialAndSender.trial)
-        alert.showAlert(fromController: trialAndSender.sender, title: messageToUser.0, message: messageToUser.1)
+        let messageToUser = buttonClickedHandler.feedback(item: trial)
+        alert.showAlert(fromController: view, title: messageToUser.0, message: messageToUser.1)
         if messageToUser.0 == "Success" {
           context.changeState(state: TrialsLoadedFromSave())
         }

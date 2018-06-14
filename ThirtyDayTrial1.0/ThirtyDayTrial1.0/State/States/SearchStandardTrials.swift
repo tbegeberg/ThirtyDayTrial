@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class SearchStandardTrials: State {
     
-    func buttomClicked(context: AppContext, trialAndSender: TrialAndSender) {
+    func buttonClicked(context: AppContext, trial: Trial, view: UIViewController) {
         
     }
     

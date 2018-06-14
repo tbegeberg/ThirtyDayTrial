@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tørk Egeberg. All rights reserved.
 //
 
-class StringValidator {
+class Validator {
     
     var rules:[ValidatorRule]
     var subjects:[Validatable]

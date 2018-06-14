@@ -17,7 +17,7 @@ class TrialHandler {
     private var trialsArray = [Trial]()
     private var array = [[String:Any]]()
     
-    func getTrials(completionHandler: @escaping ([Trial])->()) {
+    func getTrialsOnDevice(completionHandler: @escaping ([Trial])->()) {
         if let json = UserDefaults.standard.object(forKey: "Trials") as? [[String : Any]] {
             for trials in json {
                 guard let jsonData = try? JSONSerialization.data(withJSONObject: trials) else { return }
@@ -34,7 +34,7 @@ class TrialHandler {
         }
     }
     
-    func setTrial(trial: Trial) throws {
+    func saveTrialOnDevice(trial: Trial) throws {
         let trialCancelHandler = TrialCancelHandler()
         let timeToCancelMinusOneDay = trialCancelHandler.secondsToCancelMinusOneDay(cancelDate: trial.cancellationTime)
         if timeToCancelMinusOneDay < 0 {
@@ -42,13 +42,13 @@ class TrialHandler {
         } else {
             self.trialsArray.append(trial)
             self.setUserDefault()
-            setLocalNotification(trial: trial, timeToCancelMinusOneDay: timeToCancelMinusOneDay)
+            self.setLocalNotification(trial: trial, timeToCancelMinusOneDay: timeToCancelMinusOneDay)
         }
     }
     
-    func deleteTrial(trialID: UUID) {
-        let newTrialArray = self.trialsArray.filter {$0.trialID != trialID }
-        self.trialsArray = newTrialArray
+    func deleteTrialOnDevice(trialID: UUID) {
+        let array = self.trialsArray.filter {$0.trialID != trialID }
+        self.trialsArray = array
         self.setUserDefault()
     }
     

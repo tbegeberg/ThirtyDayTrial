@@ -27,23 +27,19 @@ class ViewControllerFactory {
     }
     
     static func buildAddCustomTrialView(reponder: AddTrialViewResponder) -> AddTrialViewController {
-        let customTrialViewController = AddTrialViewController()
-        TextViewFactory.setTextFieldsToDesign(view: customTrialViewController)
-        TextViewFactory.setTextFieldsDelegate(view: customTrialViewController)
-        customTrialViewController.responder = reponder
-        customTrialViewController.title = "Enter Trial Info"
-        return customTrialViewController
+        let addTrialViewController = AddTrialViewController()
+        TextViewFactory.setTextFieldsToDesign(view: addTrialViewController)
+        addTrialViewController.responder = reponder
+        addTrialViewController.title = "Enter Trial Info"
+        return addTrialViewController
     }
     
     static func buildAddStandardTrialView(reponder: AddTrialViewResponder, item: Trial) -> AddTrialViewController {
-        let customTrialViewController = AddTrialViewController()
-        TextViewFactory.setTextFieldsToDesign(view: customTrialViewController)
-        TextViewFactory.setTextFieldsDelegate(view: customTrialViewController)
-        ViewModel.fillTextFields(trial: item, view: customTrialViewController)
-        ViewModel.setDates(trial: item, view: customTrialViewController)
-        customTrialViewController.responder = reponder
-        customTrialViewController.title = "Save or Change Dates"
-        return customTrialViewController
+        let addTrialViewController = AddTrialViewController()
+        TextViewFactory.setTextFieldsToDesign(view: addTrialViewController)
+        addTrialViewController.responder = reponder
+        addTrialViewController.title = "Save or Change Dates"
+        return addTrialViewController
     }
 
     

@@ -16,10 +16,9 @@ class NetworkHandler {
     let encoder = JSONEncoder()
     
     func getJSON<T: Codable> (url: String, completionHandler: @escaping (Result<T>)->()) {
-        if let request = createRequest(url: url, method: "GET") as? URLRequest {
-            let task = self.task(request: request, completionHandler: completionHandler)
-            task.resume()
-        }
+        let request = createRequest(url: url, method: "GET")
+        let task = self.task(request: request, completionHandler: completionHandler)
+        task.resume()
     }
     
     func createRequest (url: String, method: String) -> URLRequest {
