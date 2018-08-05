@@ -13,8 +13,6 @@ class NetworkHandler {
     
     static let shared = NetworkHandler()
     
-    let encoder = JSONEncoder()
-    
     func getJSON<T: Codable> (url: String, completionHandler: @escaping (Result<T>)->()) {
         let request = createRequest(url: url, method: "GET")
         let task = self.task(request: request, completionHandler: completionHandler)
